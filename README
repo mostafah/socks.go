@@ -1,0 +1,3 @@
+I made up this just because I needed to go though a SOCKS proxy while I was making a HTTP connection in Go, and I couldn't find any SOCKS library for Go.
+
+Now this is just a function in the main file that uses that function. It's not a library yet. I hope I'll make it a real library very soon.
