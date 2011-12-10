@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
 	"html"
-	"http"
-	"net"
 	"io"
+	"net"
+	"net/http"
 	"os"
 	"strings"
 )
@@ -18,7 +18,7 @@ var (
 // socksDial performs as a replacement of the default net.Dial function. It
 // is capable of transfering the connection through a SOCKS5 proxy, defined
 // by socksAddr.
-func socksDial(network, addr string) (net.Conn, os.Error) {
+func socksDial(network, addr string) (net.Conn, error) {
 	sAddr, _ := net.ResolveTCPAddr(network, socksAddr)
 	domain := addr[:len(addr)-3]
 	var port uint16 = 80
